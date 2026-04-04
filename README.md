@@ -3,7 +3,13 @@
 ## Overview
 
 This project demonstrates a GitOps-based Kubernetes platform using ArgoCD. It implements automated deployments, drift detection, and self-healing mechanisms, along with observability using Prometheus and Grafana.
+---
 
+## Why This Project?
+
+**Problem:** In Kubernetes environments, manual changes can cause configuration drift, leading to inconsistencies and delayed recovery.
+
+**Solution:** This project implements a GitOps workflow where Git is the single source of truth. ArgoCD continuously syncs the cluster and automatically corrects any drift. Manual changes such as pod deletion or scaling are detected and reverted within seconds, ensuring consistency and reliability.
 ---
 
 ## Architecture
@@ -19,7 +25,6 @@ Node.js Application
         ↓
 Prometheus and Grafana (Monitoring)
 ```
-
 ---
 
 ## Tech Stack
@@ -30,7 +35,6 @@ Prometheus and Grafana (Monitoring)
 * Node.js (Express)
 * Prometheus
 * Grafana
-
 ---
 
 ## Key Features
@@ -41,7 +45,6 @@ Prometheus and Grafana (Monitoring)
 * Drift detection (pod deletion, scaling changes)
 * Real-time monitoring (CPU, memory, system metrics)
 * Custom dark-themed user interface
-
 ---
 
 ## GitOps Workflow
@@ -51,14 +54,12 @@ Prometheus and Grafana (Monitoring)
 3. Kubernetes manifests are synchronized
 4. Cluster state is updated automatically
 5. Any configuration drift is reconciled
-
 ---
 
 ## Drift Test Results
 
 * Pod deletion → automatically recovered (~20 seconds)
 * Manual scaling → reverted to desired state (~45 seconds)
-
 ---
 
 ## Monitoring
@@ -66,7 +67,6 @@ Prometheus and Grafana (Monitoring)
 * Prometheus collects metrics from the cluster
 * Grafana provides visualization dashboards
 * Node Exporter exposes system-level metrics
-
 ---
 
 ## Quick Start
@@ -86,7 +86,6 @@ kubectl port-forward svc/gitops-app-service -n gitops-platform 8095:80
 ```
 
 Access the application at: http://localhost:8095
-
 ---
 
 ## Screenshots
@@ -102,15 +101,6 @@ Access the application at: http://localhost:8095
 
 ### Grafana Dashboard
 ![Grafana](demo/screenshots/6-grafana.png)
----
-
-## Key Learnings
-
-* GitOps principles and workflow
-* Kubernetes deployment lifecycle
-* Drift detection and reconciliation
-* Observability using Prometheus and Grafana
-
 ---
 
 ## Author
