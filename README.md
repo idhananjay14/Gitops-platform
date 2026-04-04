@@ -1,25 +1,21 @@
 # 🚀 GitOps Kubernetes Platform
 
 ## Overview
-
 This project demonstrates a GitOps-based Kubernetes platform using ArgoCD. It implements automated deployments,
 drift detection, and self-healing mechanisms, along with observability using Prometheus and Grafana.
 
+---
 ## Why This Project?
-
 ### Problem
 In Kubernetes environments, manual changes can cause configuration drift, leading to inconsistencies and delayed
 recovery.
-
 ### Solution
-
 This project implements a GitOps workflow where Git is the single source of truth. ArgoCD continuously syncs the
 cluster and automatically corrects any drift. Manual changes such as pod deletion or scaling are detected and reverted
 within seconds, ensuring consistency and reliability.
 
-
+---
 ## Architecture
-
 ```
 GitHub (Source of Truth)
         ↓
@@ -34,7 +30,6 @@ Prometheus and Grafana (Monitoring)
 ---
 
 ## Tech Stack
-
 * Kubernetes (Kind)
 * ArgoCD
 * Docker
@@ -44,7 +39,6 @@ Prometheus and Grafana (Monitoring)
 ---
 
 ## Key Features
-
 * Git as the single source of truth
 * Automated synchronization and deployment via ArgoCD
 * Self-healing infrastructure (automatic drift correction)
@@ -54,7 +48,6 @@ Prometheus and Grafana (Monitoring)
 
 
 ## GitOps Workflow
-
 1. Code is pushed to GitHub
 2. ArgoCD detects repository changes
 3. Kubernetes manifests are synchronized
@@ -63,20 +56,17 @@ Prometheus and Grafana (Monitoring)
 ---
 
 ## Drift Test Results
-
 * Pod deletion → automatically recovered (~20 seconds)
 * Manual scaling → reverted to desired state (~45 seconds)
 ---
 
 ## Monitoring
-
 * Prometheus collects metrics from the cluster
 * Grafana provides visualization dashboards
 * Node Exporter exposes system-level metrics
 ---
 
 ## Quick Start
-
 ```bash
 git clone https://github.com/idhananjay14/gitops-platform.git
 cd gitops-platform
@@ -92,10 +82,10 @@ kubectl port-forward svc/gitops-app-service -n gitops-platform 8095:80
 ```
 
 ### Access the application at: http://localhost:8095
+
 ---
 
 ## Screenshots
-
 ### Application UI
 ![App UI](demo/screenshots/2-app-ui.png)
 
@@ -110,5 +100,4 @@ kubectl port-forward svc/gitops-app-service -n gitops-platform 8095:80
 ---
 
 ## Author
-
 Dhananjay Bhardwaj
