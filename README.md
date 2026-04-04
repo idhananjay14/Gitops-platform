@@ -8,12 +8,14 @@ drift detection, and self-healing mechanisms, along with observability using Pro
 
 ## Why This Project?
 
-**Problem:** In Kubernetes environments, manual changes can cause configuration drift, leading to inconsistencies and
-             delayed recovery.
+###Problem
+In Kubernetes environments, manual changes can cause configuration drift, leading to inconsistencies and delayed 
+recovery.
 
-**Solution:** This project implements a GitOps workflow where Git is the single source of truth. ArgoCD continuously
-              syncs the cluster and automatically corrects any drift. Manual changes such as pod deletion or scaling 
-              are detected and reverted within seconds, ensuring consistency and reliability.
+###Solution
+This project implements a GitOps workflow where Git is the single source of truth. ArgoCD continuously syncs the 
+cluster and automatically corrects any drift. Manual changes such as pod deletion or scaling are detected and reverted
+within seconds, ensuring consistency and reliability.
 ---
 
 ## Architecture
@@ -89,7 +91,7 @@ kubectl apply -f manifests/
 kubectl port-forward svc/gitops-app-service -n gitops-platform 8095:80
 ```
 
-Access the application at: http://localhost:8095
+###Access the application at: http://localhost:8095
 ---
 
 ## Screenshots
